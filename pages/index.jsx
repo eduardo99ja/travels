@@ -8,6 +8,10 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Travel from '../components/travel/Travel'
+import { useState } from 'react'
+import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
+import Loader from '../components/Loader'
+import Header from '../components/header/Header'
 const useStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -19,60 +23,79 @@ export default function Home() {
   const classes = useStyles()
   const dispatch = useDispatch()
   const travelList = useSelector(state => state.travelList)
-  const { loading, error, travels } = travelList
+  // const { loading, error, travels } = travelList
+  // useEffect(() => {
+  //   dispatch(listTravels())
+  // }, [dispatch])
+  // console.log(travels)
+
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
-    dispatch(listTravels())
-  }, [dispatch])
-  console.log(travels)
+    loading
+      ? document.querySelector('body').classList.add('loading')
+      : document.querySelector('body').classList.remove('loading')
+  }, [loading])
 
   return (
-    <Layout>
-      <MainFeaturedPost post={mainFeaturedPost} />
-      <Container className='listado-viajes' disableGutters>
-        <section>
-          <Typography
-            component='h1'
-            variant='h2'
-            align='center'
-            color='textPrimary'
-          >
-            Encuentra las mejores ofertas en Viajes Travleer
-          </Typography>
-          <Typography
-            variant='h5'
-            align='center'
-            color='textSecondary'
-            paragraph
-            className='mt'
-          >
-            Tus vacaciones al mejor precio,
-            <strong>
-              promociones en vuelos, hoteles, paquetes, cruceros
-            </strong>{' '}
-            a los principales destinos turísticos de México y el mundo. Paga tu
-            viaje hasta en 18 meses sin intereses ¡Ofertas que te hacen viajar!
-          </Typography>
-        </section>
-        <main>
-          <Container maxWidth='md' className={classes.cardGrid}>
-            {/* {loading ? (<h2>loading</h2>) : error ? (<h1>error</h1>):(<h2>{travels.data[0].price}</h2>)} */}
-            {loading ? (
-              <h1>cargando</h1>
-            ) : error ? (
-              <h2>error</h2>
-            ) : (
-              <Grid container spacing={4} alignItems='center'>
-                {travels.map(travel => (
-                  <Grid item key={travel._id} xs={12} sm={6} md={4}>
-                    <Travel travel={travel} />
-                  </Grid>
-                ))}
-              </Grid>
-            )}
-          </Container>
-        </main>
-      </Container>
-    </Layout>
+    <AnimateSharedLayout type='crossfade'>
+      <AnimatePresence>
+        {loading ? (
+          <motion.div key='loader'>
+            <Loader setLoading={setLoading} />
+          </motion.div>
+        ) : (
+          <>
+            <Layout>
+              <MainFeaturedPost post={mainFeaturedPost} />
+              {!loading && (
+                <div className='transition-image final'>
+                  <motion.img
+                    transition={{
+                      ease: [0.6, 0.01, -0.05, 0.9],
+                      duration: 1.6,
+                    }}
+                    src={
+                      'https://images.unsplash.com/photo-1528048786098-cc8217b47088?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80'
+                    }
+                    layoutId='main-image-1'
+                  />
+                </div>
+              )}
+
+              {/* <Container className='listado-viajes' disableGutters>
+                <section>
+                  <Typography
+                    component='h1'
+                    variant='h2'
+                    align='center'
+                    color='textPrimary'
+                  >
+                    Encuentra las mejores ofertas en Viajes Travleer
+                  </Typography>
+                  <Typography
+                    variant='h5'
+                    align='center'
+                    color='textSecondary'
+                    paragraph
+                    className='mt'
+                  >
+                    Tus vacaciones al mejor precio,
+                    <strong>
+                      promociones en vuelos, hoteles, paquetes, cruceros
+                    </strong>{' '}
+                    a los principales destinos turísticos de México y el mundo.
+                    Paga tu viaje hasta en 18 meses sin intereses ¡Ofertas que
+                    te hacen viajar!
+                  </Typography>
+                </section>
+                <main></main>
+              </Container> */}
+            </Layout>
+          </>
+        )}
+      </AnimatePresence>
+    </AnimateSharedLayout>
   )
 }
 const mainFeaturedPost = {

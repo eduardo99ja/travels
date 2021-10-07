@@ -14,15 +14,13 @@ const Layout = props => {
           crossOrigin='anonymous'
         />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
-        <link
-          href='https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap'
-          rel='stylesheet'
-        />
+        
         
       </Head>
       <CssBaseline />
-      <Container maxWidth='lg'>
-        <Header />
+      <Header />
+      <Container maxWidth='xl'>
+      
         {props.children}
       </Container>
       
