@@ -19,10 +19,10 @@ const Layout = props => {
       </Head>
       <CssBaseline />
       <Header />
-      <Container maxWidth='xl'>
+      
       
         {props.children}
-      </Container>
+     
       
     </>
   )

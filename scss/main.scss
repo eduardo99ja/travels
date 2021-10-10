@@ -1,9 +1,11 @@
-@import './base/base';
-
 @import './abstracts/variables';
+@import './base/base';
+@import './base/typography';
+
 @import './components/navbar';
 @import './pages/home';
 
 @import './layout/header';
 @import './components/loader';
 @import './components/banner';
+@import './components/marquee';

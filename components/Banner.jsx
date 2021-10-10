@@ -31,9 +31,9 @@ const Banner = () => {
   }, [])
   return (
     <motion.div className='banner' variants={banner}>
-      <BannerRowTop title={'brand'} />
-      <BannerRowCenter title={'experience'} playMarquee={playMarquee} />
-      <BannerRowBottom title={'studio'} />
+      <BannerRowTop title={'Xona'} />
+      <BannerRowCenter title={'Travels'} playMarquee={playMarquee} />
+      {/* <BannerRowBottom title={'studio'} /> */}
     </motion.div>
   )
 }
@@ -47,6 +47,7 @@ const AnimatedLetters = ({ title, disabled }) => (
   >
     {[...title].map(letter => (
       <motion.span
+        key={null}
         className='row-letter'
         variants={disabled ? null : letterAni}
       >
@@ -73,8 +74,8 @@ const BannerRowTop = ({ title }) => {
         className='row-col'
       >
         <span className='row-message'>
-          We are specialised in setting up the foundation of your brand and
-          setting you up for success.
+          Donde quiera ir, como quiera llegar, haga lo que quiera hacer, tenemos la agencia de viajes ideal para usted.
+
         </span>
       </motion.div>
     </div>
