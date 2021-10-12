@@ -47,7 +47,7 @@ const AnimatedLetters = ({ title, disabled }) => (
   >
     {[...title].map(letter => (
       <motion.span
-        key={null}
+        key={title.indexOf(letter)}
         className='row-letter'
         variants={disabled ? null : letterAni}
       >
@@ -74,8 +74,8 @@ const BannerRowTop = ({ title }) => {
         className='row-col'
       >
         <span className='row-message'>
-          Donde quiera ir, como quiera llegar, haga lo que quiera hacer, tenemos la agencia de viajes ideal para usted.
-
+          Donde quiera ir, como quiera llegar, haga lo que quiera hacer, tenemos
+          la agencia de viajes ideal para usted.
         </span>
       </motion.div>
     </div>

@@ -5,7 +5,7 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 5px;
     @media (max-width: $layout-breakpoint-medium) {
       &:first-child {
         margin-top: 10px;
@@ -31,8 +31,9 @@
       line-height: 25rem;
       white-space: nowrap;
       @media (max-width: $layout-breakpoint-xsmall) {
+        font-weight: 300;
         font-size: 7rem;
-        line-height: 8rem;
+        line-height: 7rem;
       }
     }
     .row-col {
@@ -99,8 +100,14 @@
   align-items: center;
   justify-content: center;
   img {
-    width: 800px;
+    width: 400px;
     display: flex;
+  }
+  @media (min-width: $layout-breakpoint-large) {
+    img {
+      width: 800px;
+      display: flex;
+    }
   }
   &.final {
     display: block;
@@ -110,7 +117,7 @@
     margin: 0 auto;
     z-index: -100;
     @media (max-width: $layout-breakpoint-xsmall) {
-      top: -56px;
+      top: -30px;
     }
     img {
       width: 100%;
