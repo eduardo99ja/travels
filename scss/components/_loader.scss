@@ -16,9 +16,16 @@ body.loading {
         left: 16%;
         bottom: 14%;
         @media (max-width: $layout-breakpoint-xsmall) {
+          width: 200px;
           left: 4%;
           bottom: 28%;
+          display: none;
         }
+        @media(max-width: $layout-breakpoint-medium){
+          width: 300px;
+         
+        }
+        
         
       }
       &.image-3 {
@@ -26,8 +33,14 @@ body.loading {
         right: 12%;
         top: 8%;
         @media (max-width: $layout-breakpoint-xsmall) {
+          width: 150px;
           top: 16%;
           right: 4%;
+          display: none;
+        }
+        @media(max-width: $layout-breakpoint-medium){
+          width: 200px;
+         
         }
       }
       &.image-4 {
@@ -36,8 +49,14 @@ body.loading {
         right: 20%;
         bottom: 10%;
         @media (max-width: $layout-breakpoint-xsmall) {
+          max-width: 200px;
           right: 6%;
-          bottom: 32%;
+          bottom: 20%;
+        }
+        @media(max-width: $layout-breakpoint-medium){
+          max-width: 300px;
+          
+         
         }
       }
       &.image-5 {
@@ -45,8 +64,13 @@ body.loading {
         left: 14%;
         top: 12%;
         @media (max-width: $layout-breakpoint-xsmall) {
+          width: 140px;
           left: 6%;
-          top: 18%;
+          top: 12%;
+        }
+        @media(max-width: $layout-breakpoint-medium){
+          width: 220px;
+         
         }
       }
       img {
