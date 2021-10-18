@@ -11,7 +11,6 @@ import Travel from '../components/travel/Travel'
 import { useState } from 'react'
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 import Loader from '../components/Loader'
-import Header from '../components/header/Header'
 import Banner from '../components/Banner'
 const useStyles = makeStyles(theme => ({
   cardGrid: {
@@ -63,7 +62,36 @@ export default function Home() {
                   />
                 </div>
               )}
-              
+              <section id='gallery' className='gallery'>
+                <Container maxWidth='xl'>
+                  <Container maxWidth='md' className='gallery-top'>
+                    <Typography
+                      variant='h2'
+                      gutterBottom
+                      component='div'
+                      className='title-section'
+                    >
+                      <b>Increibles </b>Tours y Aventuras <br />
+                      llenas de <b>diversión</b> te esperan.
+                    </Typography>
+                    <Typography
+                      variant='h5'
+                      gutterBottom
+                      component='div'
+                      className='text-description'
+                    >
+                      Somos la red de agentes de viajes profesionales más grande
+                      y célebre de México.
+                      <br />
+                      Nuestros agentes experimentados lo ayudan a crear
+                      experiencias de viaje únicas
+                      <br /> que le encantarán
+                    </Typography>
+                   
+                  </Container>
+                  
+                </Container>
+              </section>
             </Layout>
           </>
         )}

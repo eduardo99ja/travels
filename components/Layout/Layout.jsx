@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import Header from '../header/Header'
 import Head from 'next/head'
 import { Button, CssBaseline } from '@material-ui/core'
-import Container from '@material-ui/core/Container';
+import Container from '@material-ui/core/Container'
 const Layout = props => {
   return (
     <>
@@ -13,17 +14,16 @@ const Layout = props => {
           integrity='sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=='
           crossOrigin='anonymous'
         />
+        <link
+          rel='stylesheet'
+          href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
+        />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
-        
-        
       </Head>
       <CssBaseline />
       <Header />
-      
-      
-        {props.children}
-     
-      
+
+      {props.children}
     </>
   )
 }
