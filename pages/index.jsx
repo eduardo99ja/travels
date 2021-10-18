@@ -9,6 +9,8 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Travel from '../components/travel/Travel'
 import { useState } from 'react'
+import { Box, Paper } from '@material-ui/core'
+
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 import Loader from '../components/Loader'
 import Banner from '../components/Banner'
@@ -64,7 +66,7 @@ export default function Home() {
               )}
               <section id='gallery' className='gallery'>
                 <Container maxWidth='xl'>
-                  <Container maxWidth='md' className='gallery-top'>
+                  <Container maxWidth='lg' className='gallery-top'>
                     <Typography
                       variant='h2'
                       gutterBottom
@@ -87,9 +89,20 @@ export default function Home() {
                       experiencias de viaje únicas
                       <br /> que le encantarán
                     </Typography>
-                   
+                    <Box sx={{ flexGrow: 1 }} mt={5}>
+                      <Grid container spacing={1}>
+                        <Grid container item spacing={3} alignContent='center'>
+                          <FormRow />
+                        </Grid>
+                        <Grid container item spacing={3}>
+                          <FormRow />
+                        </Grid>
+                        <Grid container item spacing={3}>
+                          <FormRow />
+                        </Grid>
+                      </Grid>
+                    </Box>
                   </Container>
-                  
                 </Container>
               </section>
             </Layout>
@@ -97,5 +110,23 @@ export default function Home() {
         )}
       </AnimatePresence>
     </AnimateSharedLayout>
+  )
+}
+function FormRow() {
+  return (
+    <>
+      <Grid item xs={12} md={3}>
+        <h1 align="center">Hola</h1>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <h1 align="center">Hola</h1>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <h1 align="center">Hola</h1>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <h1 align="center">Hola</h1>
+      </Grid>
+    </>
   )
 }
