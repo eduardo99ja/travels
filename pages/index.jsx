@@ -9,10 +9,12 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Travel from '../components/travel/Travel'
 import { useState } from 'react'
+import { Box, Paper } from '@material-ui/core'
+
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 import Loader from '../components/Loader'
-import Header from '../components/header/Header'
 import Banner from '../components/Banner'
+import Latest from '../components/travel/Latest'
 const useStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -63,11 +65,174 @@ export default function Home() {
                   />
                 </div>
               )}
-              
+              <section id='gallery' className='gallery'>
+                <Container maxWidth='xl'>
+                  <Container maxWidth='lg' className='gallery-top'>
+                    <Typography
+                      variant='h2'
+                      gutterBottom
+                      component='div'
+                      className='title-section'
+                    >
+                      <b>Increibles </b>Tours y Aventuras <br />
+                      llenas de <b>diversión</b> te esperan.
+                    </Typography>
+                    <Typography
+                      variant='h5'
+                      gutterBottom
+                      component='div'
+                      className='text-description'
+                    >
+                      Somos la red de agentes de viajes profesionales más grande
+                      y célebre de México.
+                      <br />
+                      Nuestros agentes experimentados lo ayudan a crear
+                      experiencias de viaje únicas
+                      <br /> que le encantarán
+                    </Typography>
+                    <Box sx={{ flexGrow: 1 }} mt={5}>
+                      <Grid container spacing={1} >
+                        <Grid container item spacing={3} className='container-row-mb'>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest rounded={true} />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                        </Grid>
+                        <Grid container item spacing={3}>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest rounded={true} />
+                          </Grid>
+                        </Grid>
+                        <Grid container item spacing={3}>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest rounded={true} />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </Container>
+                </Container>
+              </section>
             </Layout>
           </>
         )}
       </AnimatePresence>
     </AnimateSharedLayout>
+  )
+}
+function FormRow() {
+  return (
+    <>
+      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
+        <Latest rounded={true} />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
+        <Latest />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
+        <Latest />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
+        <Latest />
+      </Grid>
+    </>
   )
 }
