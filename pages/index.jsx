@@ -14,6 +14,7 @@ import { Box, Paper } from '@material-ui/core'
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 import Loader from '../components/Loader'
 import Banner from '../components/Banner'
+import Latest from '../components/travel/Latest'
 const useStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -90,15 +91,120 @@ export default function Home() {
                       <br /> que le encantarán
                     </Typography>
                     <Box sx={{ flexGrow: 1 }} mt={5}>
-                      <Grid container spacing={1}>
-                        <Grid container item spacing={3} alignContent='center'>
-                          <FormRow />
+                      <Grid container spacing={1} >
+                        <Grid container item spacing={3} className='container-row-mb'>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest rounded={true} />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
                         </Grid>
                         <Grid container item spacing={3}>
-                          <FormRow />
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest rounded={true} />
+                          </Grid>
                         </Grid>
                         <Grid container item spacing={3}>
-                          <FormRow />
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest rounded={true} />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest />
+                          </Grid>
                         </Grid>
                       </Grid>
                     </Box>
@@ -115,17 +221,17 @@ export default function Home() {
 function FormRow() {
   return (
     <>
-      <Grid item xs={12} md={3}>
-        <h1 align="center">Hola</h1>
+      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
+        <Latest rounded={true} />
       </Grid>
-      <Grid item xs={12} md={3}>
-        <h1 align="center">Hola</h1>
+      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
+        <Latest />
       </Grid>
-      <Grid item xs={12} md={3}>
-        <h1 align="center">Hola</h1>
+      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
+        <Latest />
       </Grid>
-      <Grid item xs={12} md={3}>
-        <h1 align="center">Hola</h1>
+      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
+        <Latest />
       </Grid>
     </>
   )
