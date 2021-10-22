@@ -1,15 +1,19 @@
 .gallery-top {
   margin-top: 30px;
   margin-bottom: 30px;
-  
+
   @media (max-width: $layout-breakpoint-xsmall) {
     margin-top: 150px;
+  }
+  @media (min-width: $layout-breakpoint-xsmall) {
+    margin-top: 120px;
+  }
+  @media (min-width: $layout-breakpoint-medium) {
+    margin-top: 100px;
   }
 
   @media (min-width: $layout-breakpoint-large) {
     margin-top: 50px;
-    
-    
   }
 }
 .title-section {
@@ -22,16 +26,32 @@
   margin: 23px 0 0;
   margin-bottom: 50px !important;
 }
-.container-row-mb{
+.container-row-mb {
   margin-bottom: 20px !important;
 }
 .latest__contenedor {
   position: relative;
   display: table-cell;
-  width: 100%;
 }
 .latest__tour--img-rounded {
-  border-radius: 250px;
+  border-radius: 150px;
+  height: 300px;
+  width: 300px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+.latest__tour--img {
+  display: block;
+  height: 300px;
+  width: 300px;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  margin: auto;
+  object-fit: fill;
 }
 
 .latest__tour-details {
@@ -40,7 +60,6 @@
   width: 90%;
   top: 75%;
   color: white;
-
   padding: 0 20px;
 }
 .latest__tour-details--title {
@@ -56,7 +75,7 @@
     font-size: 18px;
     font-weight: 600;
     color: white;
-    font-family: Satisfy,cursive;
+    font-family: Satisfy, cursive;
     font-size: 48px;
     font-weight: 100;
   }

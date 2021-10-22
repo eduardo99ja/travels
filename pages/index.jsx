@@ -91,14 +91,21 @@ export default function Home() {
                       <br /> que le encantarán
                     </Typography>
                     <Box sx={{ flexGrow: 1 }} mt={5}>
-                      <Grid container spacing={1} >
-                        <Grid container item spacing={3} className='container-row-mb'>
+                      <Grid container spacing={1}>
+                        <Grid
+                          container
+                          item
+                          spacing={3}
+                          className='container-row-mb'
+                        >
                           <Grid
                             item
                             xs={12}
                             sm={6}
                             md={3}
                             className='latest__contenedor'
+                            alignContent='center'
+                            alignItems='center'
                           >
                             <Latest rounded={true} />
                           </Grid>
@@ -130,7 +137,12 @@ export default function Home() {
                             <Latest />
                           </Grid>
                         </Grid>
-                        <Grid container item spacing={3}>
+                        <Grid
+                          container
+                          item
+                          spacing={3}
+                          className='container-row-mb'
+                        >
                           <Grid
                             item
                             xs={12}
@@ -168,7 +180,12 @@ export default function Home() {
                             <Latest rounded={true} />
                           </Grid>
                         </Grid>
-                        <Grid container item spacing={3}>
+                        <Grid
+                          container
+                          item
+                          spacing={3}
+                          className='container-row-mb'
+                        >
                           <Grid
                             item
                             xs={12}

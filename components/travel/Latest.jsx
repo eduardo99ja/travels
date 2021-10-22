@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Image from 'next/image'
 import Grid from '@material-ui/core/Grid'
@@ -10,26 +11,14 @@ const Latest = ({ rounded = null }) => {
     <>
       {rounded ? (
         <>
-          <Image
-            loader={myLoader}
-            src='peru-magico-especial-fin-de-anao-291x384_6155d4ccec2ec.webp'
-            alt='Picture of the author'
-            width={500}
-            height={500}
-            className='latest__tour--img-rounded'
-          />
+          
+          <img src="https://one.cdnmega.com/images/home/bloqueo/peru-magico-especial-fin-de-anao-291x384_6155d4ccec2ec.webp" alt="" className='latest__tour--img-rounded'/>
           <div className='latest__tour-details--title-rounded'>Bacalar</div>
         </>
       ) : (
         <>
-          <Image
-            loader={myLoader}
-            src='bacalar-y-chetumal-291x384_609d9a7d4ca12.webp'
-            alt='Picture of the author'
-            width={500}
-            height={500}
-            className='latest__tour--img'
-          />
+         <img src="https://one.cdnmega.com/images/home/bloqueo/peru-magico-especial-fin-de-anao-291x384_6155d4ccec2ec.webp" alt="" className='latest__tour--img'/>
+         
 
           <div className='latest__tour-details'>
             <div className='latest__tour-details--title'>Bacalar</div>
