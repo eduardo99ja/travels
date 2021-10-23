@@ -1,11 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import Image from 'next/image'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-const myLoader = ({ src, width, quality }) => {
-  return `https://one.cdnmega.com/images/home/bloqueo/${src}`
-}
+
+
+
 const Latest = ({ rounded = null }) => {
   return (
     <>

@@ -22,6 +22,7 @@ const Layout = props => {
           href='https://fonts.googleapis.com/css2?family=Satisfy&display=swap'
           rel='stylesheet'
         />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
         <link rel='preconnect' href='https://fonts.gstatic.com' />
       </Head>

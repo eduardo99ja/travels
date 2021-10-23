@@ -10,11 +10,15 @@ import Typography from '@material-ui/core/Typography'
 import Travel from '../components/travel/Travel'
 import { useState } from 'react'
 import { Box, Paper } from '@material-ui/core'
+import { green } from '@material-ui/core/colors'
 
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 import Loader from '../components/Loader'
 import Banner from '../components/Banner'
 import Latest from '../components/travel/Latest'
+import Icon from '@material-ui/core/Icon'
+import { loadCSS } from 'fg-loadcss'
+
 const useStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -33,6 +37,17 @@ export default function Home() {
   // console.log(travels)
 
   const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const node = loadCSS(
+      'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
+      document.querySelector('#font-awesome-css')
+    )
+
+    return () => {
+      node.parentNode.removeChild(node)
+    }
+  }, [])
 
   useEffect(() => {
     loading
@@ -226,6 +241,114 @@ export default function Home() {
                       </Grid>
                     </Box>
                   </Container>
+                </Container>
+              </section>
+              <section className='features-section'>
+                <Container maxWidth='lg'>
+                  <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <div className='feature-left'>
+                        <span className='icon'>
+                          <Icon className='fas fa-globe-americas feature-icon' />
+                        </span>
+                        <div className='feature-copy'>
+                          <h3>Viaje familiar</h3>
+                          <p>
+                            Facilis ipsum reprehenderit nemo molestias. Aut cum
+                            mollitia reprehenderit.
+                          </p>
+                          <p>
+                            <a href='#'>Learn More</a>
+                          </p>
+                        </div>
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <div className='feature-left'>
+                        <span className='icon'>
+                          <Icon className='fas fa-plane feature-icon' />
+                        </span>
+                        <div className='feature-copy'>
+                          <h3>Tours</h3>
+                          <p>
+                            Facilis ipsum reprehenderit nemo molestias. Aut cum
+                            mollitia reprehenderit.
+                          </p>
+                          <p>
+                            <a href='#'>Learn More</a>
+                          </p>
+                        </div>
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <div className='feature-left'>
+                        <span className='icon'>
+                          <Icon className='fas fa-wallet feature-icon' />
+                        </span>
+                        <div className='feature-copy'>
+                          <h3>Luna de miel</h3>
+                          <p>
+                            Facilis ipsum reprehenderit nemo molestias. Aut cum
+                            mollitia reprehenderit.
+                          </p>
+                          <p>
+                            <a href='#'>Learn More</a>
+                          </p>
+                        </div>
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <div className='feature-left'>
+                        <span className='icon'>
+                          <Icon className='fas fa-wine-glass-alt feature-icon' />
+                        </span>
+                        <div className='feature-copy'>
+                          <h3>Vieje de negocios</h3>
+                          <p>
+                            Facilis ipsum reprehenderit nemo molestias. Aut cum
+                            mollitia reprehenderit.
+                          </p>
+                          <p>
+                            <a href='#'>Learn More</a>
+                          </p>
+                        </div>
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <div className='feature-left'>
+                        <span className='icon'>
+                          <Icon className='fas fa-street-view feature-icon' />
+                        </span>
+                        <div className='feature-copy'>
+                          <h3>Viaje solitario</h3>
+                          <p>
+                            Facilis ipsum reprehenderit nemo molestias. Aut cum
+                            mollitia reprehenderit.
+                          </p>
+                          <p>
+                            <a href='#'>Learn More</a>
+                          </p>
+                        </div>
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <div className='feature-left'>
+                        <span className='icon'>
+                          <Icon className='fas fa-road feature-icon' />
+                        </span>
+                        <div className='feature-copy'>
+                          <h3>Explorador</h3>
+                          <p>
+                            Facilis ipsum reprehenderit nemo molestias. Aut cum
+                            mollitia reprehenderit.
+                          </p>
+                          <p>
+                            <a href='#'>Learn More</a>
+                          </p>
+                        </div>
+                      </div>
+                    </Grid>
+                  </Grid>
                 </Container>
               </section>
             </Layout>

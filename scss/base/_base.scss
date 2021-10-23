@@ -30,3 +30,16 @@ input {
   -webkit-appearance: none;
   border-radius: 0;
 }
+a {
+  color: #337ab7;
+  text-decoration: none;
+  transition: 0.5s, ease;
+  font-weight: 300;
+}
+a:hover {
+  text-decoration: none;
+  color: #F78536 ;
+}
+a:active, a:hover {
+  outline: 0;
+}
