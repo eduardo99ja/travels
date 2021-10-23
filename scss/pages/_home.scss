@@ -96,3 +96,77 @@
   font-size: 18px;
   font-weight: 600;
 }
+
+// Feature section
+.features-section {
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 50px 0;
+  // font-family: "Open Sans", Arial, sans-serif;
+}
+
+.feature-left {
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.feature-left .icon {
+  float: left;
+  text-align: center;
+  width: 15%;
+}
+@media screen and (max-width: 992px) {
+  .feature-left .icon {
+    width: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .feature-left .icon {
+    width: 15%;
+  }
+}
+.feature-left .icon .feature-icon {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 40px;
+  color: #bdbdbd;
+}
+.feature-left .feature-copy {
+  float: right;
+  width: 80%;
+}
+@media screen and (max-width: 992px) {
+  .feature-left .feature-copy {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .feature-left .feature-copy {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .feature-left .feature-copy {
+    width: 80%;
+  }
+}
+.feature-left .feature-copy h3 {
+  font-size: 18px;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-weight: 700;
+  margin: 0;
+}
+.feature-left .feature-copy p {
+  color: #848484;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.feature-left .feature-copy p > a {
+  font-size: 15px;
+  font-weight: 300;
+}
