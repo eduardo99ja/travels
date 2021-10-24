@@ -1,21 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
+import { motion } from 'framer-motion'
 
-
-const Latest = ({ rounded = null }) => {
+const Latest = ({ rounded = null, imgSrc }) => {
   return (
     <>
       {rounded ? (
-        <>
-          
-          <img src="https://one.cdnmega.com/images/home/bloqueo/peru-magico-especial-fin-de-anao-291x384_6155d4ccec2ec.webp" alt="" className='latest__tour--img-rounded'/>
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <img
+            src={imgSrc}
+            alt=''
+            className='latest__tour--img-rounded'
+          />
           <div className='latest__tour-details--title-rounded'>Bacalar</div>
-        </>
+        </motion.div>
       ) : (
-        <>
-         <img src="https://one.cdnmega.com/images/home/bloqueo/peru-magico-especial-fin-de-anao-291x384_6155d4ccec2ec.webp" alt="" className='latest__tour--img'/>
-         
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <img
+            src={imgSrc}
+            alt=''
+            className='latest__tour--img'
+          />
 
           <div className='latest__tour-details'>
             <div className='latest__tour-details--title'>Bacalar</div>
@@ -25,7 +31,7 @@ const Latest = ({ rounded = null }) => {
               <div className='latest__tour-details--price'>$1740.00</div>
             </div>
           </div>
-        </>
+        </motion.div>
       )}
     </>
   )
