@@ -17,7 +17,45 @@ import Banner from '../components/Banner'
 import Latest from '../components/travel/Latest'
 import Icon from '@material-ui/core/Icon'
 import { loadCSS } from 'fg-loadcss'
-
+import Carousel from 'react-material-ui-carousel'
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  FormLabel,
+  Slider,
+} from '@material-ui/core'
+var items = [
+  {
+    name: 'Random Name #1',
+    description: 'Probably the most random thing you have ever seen!',
+  },
+  {
+    name: 'Random Name #2',
+    description: 'Hello World!',
+  },
+  {
+    name: 'Random Name #3',
+    description: 'Probably the most random thing you have ever seen!',
+  },
+  {
+    name: 'Random Name #4',
+    description: 'Hello World!',
+  },
+  {
+    name: 'Random Name #5',
+    description: 'Probably the most random thing you have ever seen!',
+  },
+  {
+    name: 'Random Name #6',
+    description: 'Hello World!',
+  },
+]
 const useStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -399,6 +437,38 @@ export default function Home() {
                   </Grid>
                 </Container>
               </section>
+              <section>
+                <Container maxWidth='xl'>
+                  <Container maxWidth='lg' className='gallery-top'>
+                    <Typography
+                      variant='h2'
+                      gutterBottom
+                      component='div'
+                      className='title-section'
+                    >
+                      <b>Tendencias </b>, los mejores Tours <br />y los destinos
+                      más <b>divertidos.</b>
+                    </Typography>
+                    <Typography
+                      variant='h5'
+                      gutterBottom
+                      component='div'
+                      className='text-description'
+                    >
+                      ¿Cúal será tu próximo destino?
+                      <br />
+                      Descubre lo que otros viajeros están buscando aquí.
+                    </Typography>
+                  </Container>
+                  <Box sx={{ flexGrow: 1 }} mt={5}>
+                    <Carousel>
+                      {items.map((item, i) => (
+                        <Item item={item} key={i} />
+                      ))}
+                    </Carousel>
+                  </Box>
+                </Container>
+              </section>
             </Layout>
           </>
         )}
@@ -406,21 +476,33 @@ export default function Home() {
     </AnimateSharedLayout>
   )
 }
-function FormRow() {
+
+function Item(props) {
   return (
-    <>
-      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
-        <Latest rounded={true} />
+    <Grid container spacing={3}>
+      <Grid item sm={3}>
+        <Travel travel={travel} />
       </Grid>
-      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
-        <Latest />
+      <Grid item sm={3}>
+        <Travel travel={travel} />
       </Grid>
-      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
-        <Latest />
+      <Grid item sm={3}>
+        <Travel travel={travel} />
       </Grid>
-      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
-        <Latest />
+      <Grid item sm={3}>
+        <Travel travel={travel} />
       </Grid>
-    </>
+    </Grid>
   )
+}
+
+const travel = {
+  image: ['https://www.travelleaders.com/images/masonryHome/costa_rica.jpg'],
+  name: 'Random Name #3',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin, tellus vitae',
+  price: 1900,
+  days: 5,
+  city: 'Guanajuato',
+  category: 'Tour',
 }

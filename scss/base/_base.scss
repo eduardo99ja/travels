@@ -17,7 +17,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -35,11 +35,18 @@ a {
   text-decoration: none;
   transition: 0.5s, ease;
   font-weight: 300;
+  background: 0 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  outline: 0;
 }
 a:hover {
   text-decoration: none;
-  color: #F78536 ;
+  color: #f78536;
 }
-a:active, a:hover {
+a:active,
+a:hover {
   outline: 0;
 }
