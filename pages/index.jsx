@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography'
 import Travel from '../components/travel/Travel'
 import { useState } from 'react'
 import { Box, Paper } from '@material-ui/core'
-import { green } from '@material-ui/core/colors'
 
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 import Loader from '../components/Loader'
@@ -18,7 +17,45 @@ import Banner from '../components/Banner'
 import Latest from '../components/travel/Latest'
 import Icon from '@material-ui/core/Icon'
 import { loadCSS } from 'fg-loadcss'
-
+import Carousel from 'react-material-ui-carousel'
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  FormLabel,
+  Slider,
+} from '@material-ui/core'
+var items = [
+  {
+    name: 'Random Name #1',
+    description: 'Probably the most random thing you have ever seen!',
+  },
+  {
+    name: 'Random Name #2',
+    description: 'Hello World!',
+  },
+  {
+    name: 'Random Name #3',
+    description: 'Probably the most random thing you have ever seen!',
+  },
+  {
+    name: 'Random Name #4',
+    description: 'Hello World!',
+  },
+  {
+    name: 'Random Name #5',
+    description: 'Probably the most random thing you have ever seen!',
+  },
+  {
+    name: 'Random Name #6',
+    description: 'Hello World!',
+  },
+]
 const useStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -119,10 +156,13 @@ export default function Home() {
                             sm={6}
                             md={3}
                             className='latest__contenedor'
-                            alignContent='center'
-                            alignItems='center'
                           >
-                            <Latest rounded={true} />
+                            <Latest
+                              rounded={true}
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-1-650x650.jpg'
+                              }
+                            />
                           </Grid>
                           <Grid
                             item
@@ -131,7 +171,11 @@ export default function Home() {
                             md={3}
                             className='latest__contenedor'
                           >
-                            <Latest />
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-40-650x650.jpg'
+                              }
+                            />
                           </Grid>
                           <Grid
                             item
@@ -140,7 +184,11 @@ export default function Home() {
                             md={3}
                             className='latest__contenedor'
                           >
-                            <Latest />
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-41-650x650.jpg'
+                              }
+                            />
                           </Grid>
                           <Grid
                             item
@@ -149,50 +197,11 @@ export default function Home() {
                             md={3}
                             className='latest__contenedor'
                           >
-                            <Latest />
-                          </Grid>
-                        </Grid>
-                        <Grid
-                          container
-                          item
-                          spacing={3}
-                          className='container-row-mb'
-                        >
-                          <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            md={3}
-                            className='latest__contenedor'
-                          >
-                            <Latest />
-                          </Grid>
-                          <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            md={3}
-                            className='latest__contenedor'
-                          >
-                            <Latest />
-                          </Grid>
-                          <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            md={3}
-                            className='latest__contenedor'
-                          >
-                            <Latest />
-                          </Grid>
-                          <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            md={3}
-                            className='latest__contenedor'
-                          >
-                            <Latest rounded={true} />
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-42-650x650.jpg'
+                              }
+                            />
                           </Grid>
                         </Grid>
                         <Grid
@@ -208,7 +217,11 @@ export default function Home() {
                             md={3}
                             className='latest__contenedor'
                           >
-                            <Latest rounded={true} />
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-43-650x650.jpg'
+                              }
+                            />
                           </Grid>
                           <Grid
                             item
@@ -217,7 +230,11 @@ export default function Home() {
                             md={3}
                             className='latest__contenedor'
                           >
-                            <Latest />
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-43-650x650.jpg'
+                              }
+                            />
                           </Grid>
                           <Grid
                             item
@@ -226,7 +243,11 @@ export default function Home() {
                             md={3}
                             className='latest__contenedor'
                           >
-                            <Latest />
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-43-650x650.jpg'
+                              }
+                            />
                           </Grid>
                           <Grid
                             item
@@ -235,7 +256,72 @@ export default function Home() {
                             md={3}
                             className='latest__contenedor'
                           >
-                            <Latest />
+                            <Latest
+                              rounded={true}
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-2-650x650.jpg'
+                              }
+                            />
+                          </Grid>
+                        </Grid>
+                        <Grid
+                          container
+                          item
+                          spacing={3}
+                          className='container-row-mb'
+                        >
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest
+                              rounded={true}
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-3-650x650.jpg'
+                              }
+                            />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46-650x650.jpg'
+                              }
+                            />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-47-650x650.jpg'
+                              }
+                            />
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            className='latest__contenedor'
+                          >
+                            <Latest
+                              imgSrc={
+                                'https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-48-650x650.jpg'
+                              }
+                            />
                           </Grid>
                         </Grid>
                       </Grid>
@@ -351,6 +437,38 @@ export default function Home() {
                   </Grid>
                 </Container>
               </section>
+              <section>
+                <Container maxWidth='xl'>
+                  <Container maxWidth='lg' className='gallery-top'>
+                    <Typography
+                      variant='h2'
+                      gutterBottom
+                      component='div'
+                      className='title-section'
+                    >
+                      <b>Tendencias </b>, los mejores Tours <br />y los destinos
+                      más <b>divertidos.</b>
+                    </Typography>
+                    <Typography
+                      variant='h5'
+                      gutterBottom
+                      component='div'
+                      className='text-description'
+                    >
+                      ¿Cúal será tu próximo destino?
+                      <br />
+                      Descubre lo que otros viajeros están buscando aquí.
+                    </Typography>
+                  </Container>
+                  <Box sx={{ flexGrow: 1 }} mt={5}>
+                    <Carousel>
+                      {items.map((item, i) => (
+                        <Item item={item} key={i} />
+                      ))}
+                    </Carousel>
+                  </Box>
+                </Container>
+              </section>
             </Layout>
           </>
         )}
@@ -358,21 +476,33 @@ export default function Home() {
     </AnimateSharedLayout>
   )
 }
-function FormRow() {
+
+function Item(props) {
   return (
-    <>
-      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
-        <Latest rounded={true} />
+    <Grid container spacing={3}>
+      <Grid item sm={3}>
+        <Travel travel={travel} />
       </Grid>
-      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
-        <Latest />
+      <Grid item sm={3}>
+        <Travel travel={travel} />
       </Grid>
-      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
-        <Latest />
+      <Grid item sm={3}>
+        <Travel travel={travel} />
       </Grid>
-      <Grid item xs={12} sm={6} md={3} className='latest__contenedor'>
-        <Latest />
+      <Grid item sm={3}>
+        <Travel travel={travel} />
       </Grid>
-    </>
+    </Grid>
   )
+}
+
+const travel = {
+  image: ['https://www.travelleaders.com/images/masonryHome/costa_rica.jpg'],
+  name: 'Random Name #3',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin, tellus vitae',
+  price: 1900,
+  days: 5,
+  city: 'Guanajuato',
+  category: 'Tour',
 }
