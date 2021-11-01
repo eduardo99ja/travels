@@ -28,15 +28,15 @@ const Travel = ({ travel }) => {
     <Card className={classes.card}>
       <CardMedia
         className={classes.cardMedia}
-        image={travel.image[0]}
-        title={travel.name}
+        image={'https://www.travelleaders.com/images/masonryHome/costa_rica.jpg'}
+        title={travel.title}
       />
       <CardContent className='container_travel'>
         <Grid container>
           <Grid item xs>
             <Typography gutterBottom variant='h5' component='h4'>
-              <Link href='/travels/[id]' as={`/travels/${travel._id}`}>
-                <a className='travel_name'>{travel.name}</a>
+              <Link href='/travels/[id]' as={`/travels/${travel.id}`}>
+                <a className='travel_name'>{travel.title}</a>
               </Link>
             </Typography>
           </Grid>
@@ -74,8 +74,8 @@ const Travel = ({ travel }) => {
               </span>
             </Grid>
             <Grid item>
-              <Link href='/travels/[id]' as={`/travels/${travel._id}`}>
-                <a className='travel_city'>{travel.city}</a>
+              <Link href='/travels/[id]' as={`/travels/${travel.id}`}>
+                <a className='travel_city'>{travel.location}</a>
               </Link>
             </Grid>
           </Grid>
@@ -85,9 +85,9 @@ const Travel = ({ travel }) => {
                 <Icon className='fas fa-info ' />
               </span>
             </Grid>
-            <Grid item>
+            <Grid item sm>
               <Link href='/travels/[id]' as={`/travels/${travel._id}`}>
-                <a className='travel_city'>{travel.category}</a>
+                <a className='travel_city'>{travel.category.slug}</a>
               </Link>
             </Grid>
           </Grid>

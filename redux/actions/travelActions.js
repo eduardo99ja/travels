@@ -5,7 +5,7 @@ export const listTravels = () => async dispatch => {
   try {
     dispatch({ type: types.TRAVEL_LIST_REQUEST })
 
-    const { data } = await clienteAxios.get('/api/v1/travels')
+    const { data } = await clienteAxios.get('/api/travels/')
 
     dispatch({
       type: types.TRAVEL_LIST_SUCCESS,

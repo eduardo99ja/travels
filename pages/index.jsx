@@ -498,11 +498,11 @@ function Item(props) {
 
 const travel = {
   image: ['https://www.travelleaders.com/images/masonryHome/costa_rica.jpg'],
-  name: 'Random Name #3',
+  title: 'Random Name #3',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin, tellus vitae',
   price: 1900,
   days: 5,
-  city: 'Guanajuato',
-  category: 'Tour',
+  location: 'Guanajuato',
+  category: {"slug":"Tours"},
 }
